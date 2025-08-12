@@ -102,9 +102,14 @@ var mammal = /** @class */ (function () {
         console.log("Mammal is eating.");
         return;
     };
+    mammal.prototype.sleep = function () {
+        console.log("Mammal is sleeping.");
+        return;
+    };
     return mammal;
 }());
 // we can inherit from mammal class using extends keyword
+// we can also implement an interface using implements keyword
 var Animal = /** @class */ (function (_super) {
     __extends(Animal, _super);
     function Animal(nameArg, ageArg, hasHairArg, isWarmBloodedArg) {
@@ -120,3 +125,18 @@ var Animal = /** @class */ (function (_super) {
 var cat = new Animal("Marcus", 2, true, true);
 console.log(cat);
 console.log(cat.eat()); // inherited method from mammal class
+// dino variable must follow to IAnimal interface
+var dino = {
+    name: "Rex",
+    age: 3,
+    hasHair: true,
+    isWarmBlooded: true,
+    eat: function () {
+        console.log("Dino is eating.");
+    },
+    sleep: function () {
+        console.log("Dino is sleeping.");
+    },
+};
+//
+var dog = new Animal("Joe", 5, true, true);

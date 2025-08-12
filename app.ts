@@ -115,10 +115,16 @@ class mammal {
         console.log("Mammal is eating.");
         return;
     }
+
+    sleep(): void {
+        console.log("Mammal is sleeping.");
+        return;
+    }
 }
 
 // we can inherit from mammal class using extends keyword
-class Animal extends mammal {
+// we can also implement an interface using implements keyword
+class Animal extends mammal implements IAnimal {
     name: string;
     age: number;
 
@@ -134,3 +140,32 @@ class Animal extends mammal {
 let cat = new Animal("Marcus", 2, true, true);
 console.log(cat);
 console.log(cat.eat()); // inherited method from mammal class
+
+// Interfaces
+// Interfaces are used to define the structure of an object.
+// Interface for Animal objects
+interface IAnimal{
+    name: string;
+    age: number;
+    hasHair: boolean;
+    isWarmBlooded: boolean;
+    eat(): void; // method signature
+    sleep(): void; // method signature
+}
+
+// dino variable must follow to IAnimal interface
+let dino: IAnimal = {
+    name: "Rex",
+    age: 3,
+    hasHair: true,
+    isWarmBlooded: true,
+    eat(){
+        console.log("Dino is eating.");
+    },
+    sleep(){
+        console.log("Dino is sleeping.");
+    },
+};
+
+//
+let dog: IAnimal = new Animal("Joe", 5, true, true)
