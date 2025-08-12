@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        // we can specify the target javascript version to compile our Typescript code to.
+        "target": "es6",
+    }
+}
