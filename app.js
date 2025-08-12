@@ -116,9 +116,20 @@ var Animal = /** @class */ (function (_super) {
         // we can use "super" keyword to call the parent class constructor
         var _this = _super.call(this, hasHairArg, isWarmBloodedArg) || this;
         _this.name = nameArg;
-        _this.age = ageArg;
+        _this._age = ageArg;
         return _this;
     }
+    Object.defineProperty(Animal.prototype, "age", {
+        // getter and setter methods for manipulating private properties
+        get: function () {
+            return this._age;
+        },
+        set: function (value) {
+            this._age = value;
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Animal;
 }(mammal));
 //Create an animal instance 
@@ -140,3 +151,10 @@ var dino = {
 };
 //
 var dog = new Animal("Joe", 5, true, true);
+//Type Assertion
+// We can tell the compiler our variable data type explicitly
+var message = "Hello, TypeScript!";
+console.log(message);
+// we can use angle brackets to tell the compiler the type of variable
+var messageLength = message.length; // angle brackets syntax
+var alterMessageLength = message.length; // "as" syntax

@@ -125,15 +125,30 @@ class mammal {
 // we can inherit from mammal class using extends keyword
 // we can also implement an interface using implements keyword
 class Animal extends mammal implements IAnimal {
-    name: string;
-    age: number;
+    // What are access modifiers?
+    // These are used to control the visibility of class members.
+    // public: accessible from anywhere (default)
+    // private: accessible only within the class
+    // protected: accessible within the class and subclasses
+    public name: string;
+    private _age: number;
+    protected hasTail: boolean;
 
     constructor(nameArg: string, ageArg: number, hasHairArg: boolean, isWarmBloodedArg: boolean) {
        // we can use "super" keyword to call the parent class constructor
         super(hasHairArg, isWarmBloodedArg);
         this.name = nameArg;
-        this.age = ageArg;
+        this._age = ageArg;
     }
+
+     // getter and setter methods for manipulating private properties
+  get age(): number {
+    return this._age;
+  }
+
+  set age(value: number) {
+    this._age = value;
+  }
 }
 
 //Create an animal instance 
@@ -169,3 +184,12 @@ let dino: IAnimal = {
 
 //
 let dog: IAnimal = new Animal("Joe", 5, true, true)
+
+//Type Assertion
+// We can tell the compiler our variable data type explicitly
+let message: unknown = "Hello, TypeScript!";
+console.log(message);
+
+// we can use angle brackets to tell the compiler the type of variable
+let messageLength = (<string>message).length; // angle brackets syntax
+let alterMessageLength = (message as string).length; // "as" syntax
