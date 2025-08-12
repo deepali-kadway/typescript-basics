@@ -75,17 +75,62 @@ console.log(person);
 
 // classes
 class Person{
+    //properties
     name: string;
     age: number;
     isStudent: boolean;
 
+    // constructor function used to initialize an object instance
     constructor(nameArg: string, ageArg: number, isStudentArg: boolean) {
         this.name = nameArg;
         this.age = ageArg;
         this.isStudent = isStudentArg;
     }
+
+    // greet(): void {
+    // console.log("Hello World!");
+    // return;
+    // }    
 }
 
+// initialize a class = creating an object instance
+//new keyword is ued to call yhe constructor of the person class
 let person1 = new Person("Alice", 25, true);
 let person2 = new Person("Bob", 30, false);
 console.log(person1, person2);
+
+// What is Inheritance?
+// Whrn s class inherits properties and methods from another class
+// Parent class for an animal can be mammal
+class mammal {
+    hasHair: boolean;
+    isWarmBlooded: boolean;
+
+    constructor(hasHairArg: boolean, isWarmBloodedArg: boolean) {
+        this.hasHair = hasHairArg;
+        this.isWarmBlooded = isWarmBloodedArg;
+    }
+
+    eat(): void {
+        console.log("Mammal is eating.");
+        return;
+    }
+}
+
+// we can inherit from mammal class using extends keyword
+class Animal extends mammal {
+    name: string;
+    age: number;
+
+    constructor(nameArg: string, ageArg: number, hasHairArg: boolean, isWarmBloodedArg: boolean) {
+       // we can use "super" keyword to call the parent class constructor
+        super(hasHairArg, isWarmBloodedArg);
+        this.name = nameArg;
+        this.age = ageArg;
+    }
+}
+
+//Create an animal instance 
+let cat = new Animal("Marcus", 2, true, true);
+console.log(cat);
+console.log(cat.eat()); // inherited method from mammal class
