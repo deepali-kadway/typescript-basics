@@ -37,3 +37,55 @@ if(z==10){
 }
 
 // let is prefered over var, and considered best practice to avoid scoping issues.
+
+// Data types in Typescript
+// we can define variables data type using a colon.
+// built in data types: string, number, boolean, any, void, null, undefined
+let customMessage: string = "Hello, world!";
+let num: number = 42;
+let isActive: boolean = true;
+let anything: any = "Can be anything";
+let nothing: void = undefined; // used for functions that do not return a value
+let undef: undefined = undefined; // explicitly set to undefined
+console.log(customMessage, num, isActive, anything, nothing, undef);
+
+// function does not return anything, so return type is void
+function greet(): void {
+    console.log("Hello World!");
+    return;
+}
+
+// Type operators
+console.log(typeof num); // prints "number"
+console.log(typeof customMessage); // prints "string"
+console.log(typeof isActive); // prints "boolean"
+
+// user-defined data types
+// Arrays, Tuples, Classes, and Interfaces
+
+// Arrays
+let numbers: number[] = [1, 2, 3, 4, 5]; // array of numbers
+let names: string[] = ["Alice", "Bob", "Charlie"]; // array of strings
+let mixed: (number | string)[] = [1, "two", 3, "four"]; // array of mixed types
+console.log(numbers, names, mixed);
+
+// Tuples: when we have a known number of elements with different data types
+let person: (string | number | boolean)[] = [1, "John Doe", true]; // tuple with number, string, and boolean
+console.log(person);
+
+// classes
+class Person{
+    name: string;
+    age: number;
+    isStudent: boolean;
+
+    constructor(nameArg: string, ageArg: number, isStudentArg: boolean) {
+        this.name = nameArg;
+        this.age = ageArg;
+        this.isStudent = isStudentArg;
+    }
+}
+
+let person1 = new Person("Alice", 25, true);
+let person2 = new Person("Bob", 30, false);
+console.log(person1, person2);
