@@ -2,5 +2,9 @@
     "compilerOptions": {
         // we can specify the target javascript version to compile our Typescript code to.
         "target": "es6",
+        "module": "es2015",
+        "lib": ["es6", "DOM"],
+        "esModuleInterop": true,
+        "moduleResolution": "node"
     }
 }

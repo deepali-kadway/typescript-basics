@@ -101,26 +101,29 @@ console.log(person1, person2);
 
 // What is Inheritance?
 // Whrn s class inherits properties and methods from another class
+
+//import mammal class from mammal.ts file
+import { mammal } from "./mammal.js";
 // Parent class for an animal can be mammal
-class mammal {
-    hasHair: boolean;
-    isWarmBlooded: boolean;
+// class mammal {
+//     hasHair: boolean;
+//     isWarmBlooded: boolean;
 
-    constructor(hasHairArg: boolean, isWarmBloodedArg: boolean) {
-        this.hasHair = hasHairArg;
-        this.isWarmBlooded = isWarmBloodedArg;
-    }
+//     constructor(hasHairArg: boolean, isWarmBloodedArg: boolean) {
+//         this.hasHair = hasHairArg;
+//         this.isWarmBlooded = isWarmBloodedArg;
+//     }
 
-    eat(): void {
-        console.log("Mammal is eating.");
-        return;
-    }
+//     eat(): void {
+//         console.log("Mammal is eating.");
+//         return;
+//     }
 
-    sleep(): void {
-        console.log("Mammal is sleeping.");
-        return;
-    }
-}
+//     sleep(): void {
+//         console.log("Mammal is sleeping.");
+//         return;
+//     }
+// }
 
 // we can inherit from mammal class using extends keyword
 // we can also implement an interface using implements keyword
