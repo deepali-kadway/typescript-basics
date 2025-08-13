@@ -4,7 +4,6 @@
         "target": "es6",
         "module": "es2015",
         "lib": ["es6", "DOM"],
-        "esModuleInterop": true,
-        "moduleResolution": "node"
+        "esModuleInterop": true
     }
 }
